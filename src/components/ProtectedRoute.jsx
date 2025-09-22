@@ -6,6 +6,7 @@ const ProtectedRoute = ({ children, requiredRole }) => {
   const { isAuthenticated, activeRole, isLoading } = useAuthStore();
 
   if (isLoading) {
+    console.log("isLoading#F")
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
@@ -14,10 +15,12 @@ const ProtectedRoute = ({ children, requiredRole }) => {
   }
 
   if (!isAuthenticated) {
+    console.log("isAuthenticated#F")
     return <Navigate to="/" replace />;
   }
 
   if (requiredRole && activeRole !== requiredRole) {
+    console.log("requiredRole#F")
     return activeRole === "mentor" ? (
       <Navigate to="/dashboard/mentor" replace />
     ) : (
@@ -28,4 +31,4 @@ const ProtectedRoute = ({ children, requiredRole }) => {
   return children;
 };
 
-export default ProtectedRoute;
+export default ProtectedRoute; 

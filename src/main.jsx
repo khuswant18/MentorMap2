@@ -49,8 +49,8 @@ const router = createBrowserRouter([
         path: "",
         element: (
           <PublicRoute>
-            <Home />
-          </PublicRoute>
+            <Home /> 
+          </PublicRoute> 
         ),
       },
       {

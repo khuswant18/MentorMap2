@@ -24,8 +24,10 @@ export default function Home() {
   const navigate = useNavigate() 
   const {isAuthenticated} = useAuthStore()
   const featuredMentors = mentorsData.slice(0, 3);
-
+  
   useEffect(()=>{  
+    console.log("Fetching colleges on Home page load");
+    console.log(loading)
     fetchColleges() 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]) //
@@ -39,7 +41,7 @@ export default function Home() {
     setTimeout(() => {
       {isAuthenticated ? navigate('/mentorspage') : navigate('/')}
     }, 500);  
-  };
+  }; 
 
   return (
     <div>
