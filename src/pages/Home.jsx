@@ -25,10 +25,10 @@ export default function Home() {
   const {isAuthenticated} = useAuthStore()
   const featuredMentors = mentorsData.slice(0, 3);
 
-  useEffect(()=>{ 
-    fetchColleges() // Let the store handle whether to actually fetch
+  useEffect(()=>{  
+    fetchColleges() 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]) // Only run once on mount
+  },[]) //
 
   if (loading) return <div>Loading...</div>
 
