@@ -14,7 +14,7 @@ import useCollegeStore from "@/stores/college.store";
 import { mentorsData } from "./data/mentor";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { Link } from "react-router-dom";
 import useAuthStore from "@/stores/authStore";
 import { useNavigate } from "react-router-dom";
