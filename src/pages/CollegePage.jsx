@@ -20,7 +20,7 @@ const ExploreColleges = () => {
   }, []); 
 
   if (loading) return <div>Loading....</div>;
-
+ 
   const clearAllFilters = () => {
     setSearchTerm("");
     setFilters({

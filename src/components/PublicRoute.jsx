@@ -7,7 +7,6 @@ const PublicRoute = ({ children }) => {
 
 
   if (isLoading) {
-    console.log("loadingfrompublic#F");
     return (
       <div className="min-h-screen flex items-center justify-center">
         
@@ -18,7 +17,7 @@ const PublicRoute = ({ children }) => {
 
 
   if (user && activeRole === 'mentor') {
-    console.log("activeRolefrompublic#F");
+
     return <Navigate to="/dashboard/mentor" replace />;
   }
 

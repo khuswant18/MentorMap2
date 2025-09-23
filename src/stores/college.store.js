@@ -6,10 +6,9 @@ const useCollegeStore = create((set, get) => ({
   colleges: [],
   loading: false,
   error: null,
-  fetched: false, // Track if we've already fetched
+  fetched: false, 
   fetchColleges: async (force = false) => {
     const { loading, colleges } = get();
-    // Skip if loading, or if we already have data (unless forced)
     if (loading || (!force && colleges.length > 0)) return; 
     
     set({ loading: true, error: null });
@@ -26,4 +25,4 @@ const useCollegeStore = create((set, get) => ({
   },
 }));
 
-export default useCollegeStore 
+export default useCollegeStore;

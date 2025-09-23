@@ -37,7 +37,6 @@ export default function EditProfileModal({ isOpen, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Profile updated:", formData);
     onClose();
   };
 

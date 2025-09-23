@@ -79,14 +79,14 @@ const useAuthStore = create(
 
     validateUser: async () => {
       const { isLoading } = get();
-      if (isLoading) return; // Prevent multiple simultaneous calls
-      
+      if (isLoading) return;
+
       set({ isLoading: true });
 
       try {
         const role = Cookies.get("role") || "student"; 
         const endpoint = "/student/auth/me";
-
+ 
         const res = await api.get(endpoint);
 
         if (res.data.user) {

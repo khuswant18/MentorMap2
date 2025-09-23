@@ -26,8 +26,6 @@ export default function Home() {
   const featuredMentors = mentorsData.slice(0, 3);
   
   useEffect(()=>{  
-    console.log("Fetching colleges on Home page load");
-    console.log(loading)
     fetchColleges() 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]) //
@@ -37,7 +35,6 @@ export default function Home() {
   const featuredColleges = colleges.slice(0, 6);
 
   const handleConnectClick = () => {
-    console.log("[v0] Connect Now button clicked");
     setTimeout(() => {
       {isAuthenticated ? navigate('/mentorspage') : navigate('/')}
     }, 500);  
