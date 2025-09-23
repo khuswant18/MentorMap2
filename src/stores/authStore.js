@@ -75,7 +75,7 @@ const useAuthStore = create(
       set({ activeRole: role });
     },
 
-    setLoading: (loading) => set({ isLoading: loading }),
+    // setLoading: (loading) => set({ isLoading: loading }),
 
     validateUser: async () => {
       const { isLoading } = get();
