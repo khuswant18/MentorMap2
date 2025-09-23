@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Twitter, Linkedin, Github, Mail } from "lucide-react";
 
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
@@ -19,105 +20,80 @@ export default function Footer() {
               drive results.
             </p>
             <div className="flex space-x-4">
-              <Button
+              <a
+                href="https://x.com/KhuswantRa45688"
                 variant="ghost"
                 size="sm"
                 className="text-gray-400 hover:text-white p-2"
               >
                 <Twitter className="h-5 w-5" />
-              </Button>
-              <Button
+              </a>
+              <a
+                href="https://www.linkedin.com/in/khuswant-rajpurohit-b749ba30a/"
                 variant="ghost"
                 size="sm"
                 className="text-gray-400 hover:text-white p-2"
               >
                 <Linkedin className="h-5 w-5" />
-              </Button>
-              <Button
+              </a>
+              <a
+                href="https://github.com/khuswant18"
                 variant="ghost"
                 size="sm"
                 className="text-gray-400 hover:text-white p-2"
               >
                 <Github className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-gray-400 hover:text-white p-2"
-              >
-                <Mail className="h-5 w-5" />
-              </Button>
+              </a>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Product</h3>
+            <h3 className="font-semibold mb-4">Explore</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Features
+                  Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Pricing
+                <a href="/college" className="hover:text-white transition-colors">
+                  Explore Colleges
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Integrations
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  API
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Chrome Extension
+                <a href="/mentorspage" className="hover:text-white transition-colors">
+                  Explore Mentors 
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Company Links */}
+
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  About
+                <a href="/student/dashboard" className="hover:text-white transition-colors">
+                  Student Dashboard
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Blog
+                <a href="/dashboard/mentor" className="hover:text-white transition-colors">
+                  Mentor Dashboard
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy
+                <a href="/mentorspage" className="hover:text-white transition-colors">
+                  Mentor Profile
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 VideoFlow. All rights reserved.
+            © 2024 MentorMap. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <a

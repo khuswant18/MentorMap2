@@ -14,7 +14,10 @@ import useAuthStore from "../stores/authStore";
 
 const useDashboard = DashboardProvider.useDashboard;
 
-export function DashboardHeader({ showProfileDropdown = true }) {
+export default function DashboardHeader({ 
+  showProfileDropdown = true, 
+  onNavigate = null
+}) {
   const { logout } = useAuthStore();
 
   const handleSignOut = async () => {
@@ -23,6 +26,13 @@ export function DashboardHeader({ showProfileDropdown = true }) {
   };
   const { setSidebarOpen } = useDashboard();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleNavigation = (page) => {
+    if (onNavigate) {
+      onNavigate(page);
+    }
+    setDropdownOpen(false);
+  };
 
   return (
     <header className="h-16 border-b border-border bg-card flex items-center justify-between px-6">
@@ -78,17 +88,26 @@ export function DashboardHeader({ showProfileDropdown = true }) {
                 </div>
 
                 <div className="py-2">
-                  <div className="flex items-center gap-3 px-4 py-2 text-sm cursor-pointer text-popover-foreground hover:bg-accent">
+                  <div 
+                    onClick={() => handleNavigation("home")}
+                    className="flex items-center gap-3 px-4 py-2 text-sm cursor-pointer text-popover-foreground hover:bg-accent"
+                  >
                     <User className="w-4 h-4" />
                     <span>Dashboard</span> 
                   </div>
-                  <div className="flex items-center gap-3 px-4 py-2 text-sm cursor-pointer text-popover-foreground hover:bg-accent">
+                  <div 
+                    onClick={() => handleNavigation("bookings")}
+                    className="flex items-center gap-3 px-4 py-2 text-sm cursor-pointer text-popover-foreground hover:bg-accent"
+                  >
                     <Calendar className="w-4 h-4" />
                     <span>My Meetings</span>
                   </div>
-                  <div className="flex items-center gap-3 px-4 py-2 text-sm cursor-pointer text-popover-foreground hover:bg-accent">
+                  <div 
+                    onClick={() => handleNavigation("analytics")}
+                    className="flex items-center gap-3 px-4 py-2 text-sm cursor-pointer text-popover-foreground hover:bg-accent"
+                  >
                     <Settings className="w-4 h-4" />
-                    <span>Edit Profile</span>
+                    <span>Analytics</span>
                   </div>
                 </div>
 
@@ -109,4 +128,3 @@ export function DashboardHeader({ showProfileDropdown = true }) {
   );
 }
 
-export default DashboardHeader;

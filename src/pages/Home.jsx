@@ -31,7 +31,6 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); //
 
-  // if (loading) return <div>Loading...</div>;
 
   const featuredColleges = colleges.slice(0, 6);
 
@@ -99,7 +98,7 @@ export default function Home() {
             {featuredColleges.map((college) => (
               <Card
                 key={college.id}
-                className="group hover:shadow-medium transition-all duration-300 bg-card-gradient border-0"
+                className="group hover:shadow-medium transition-all duration-300 bg-card-gradient border-0 cursor-pointer"
               >
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden rounded-t-lg">
@@ -139,11 +138,11 @@ export default function Home() {
                         size="sm"
                         className="group/btn"
                       >
-                        <Link to={`/mentors/${college.name}`}>
-                          View Mentors
+                        <Link to={`/mentorspage`}>
+                          View Mentors 
                           <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                         </Link>
-                      </Button>
+                      </Button> 
                     </div>
                   </div>
                 </CardContent>
@@ -168,7 +167,7 @@ export default function Home() {
             {featuredMentors.map((m) => (
               <Card
                 key={m.id}
-                className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-white rounded-2xl"
+                className="group hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-white rounded-2xl cursor-pointer"
               >
                 <CardContent className="p-6 flex flex-col h-full justify-between">
                   <div className="flex flex-col items-center">
@@ -237,9 +236,9 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <Button className="cursor-pointer w-full bg-purple-600 hover:bg-purple-700 text-white py-2 flex items-center justify-center gap-2 mt-auto">
+                  <Link to={`/mentorspage`} className="rounded-xl cursor-pointer w-full bg-blue-600 hover:bg-blue-700 text-white py-2 flex items-center justify-center gap-2 mt-auto">
                     <MessageCircle className="h-5 w-5" /> Connect
-                  </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

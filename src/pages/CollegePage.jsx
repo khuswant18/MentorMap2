@@ -8,7 +8,7 @@ import useCollegeStore from "@/stores/college.store";
 
 const ExploreColleges = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { colleges, fetchColleges, loading } = useCollegeStore();
+  const { colleges, fetchColleges } = useCollegeStore();
   const [filters, setFilters] = useState({
     location: "all",
     mentorRange: "all",
@@ -19,7 +19,6 @@ const ExploreColleges = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); 
 
-  if (loading) return <div>Loading....</div>;
  
   const clearAllFilters = () => {
     setSearchTerm("");

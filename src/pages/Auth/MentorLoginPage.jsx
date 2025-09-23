@@ -253,7 +253,7 @@ const MentorLoginPage = () => {
               <Button 
                 onClick={verifyOtp} 
                 disabled={loading}
-                className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+                className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50 cursor-pointer"
               >
                 {loading ? "Verifying..." : "Verify OTP"}
               </Button>

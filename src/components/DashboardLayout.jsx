@@ -9,10 +9,9 @@ import {
   User,
   X,
 } from "lucide-react";
-import { DashboardHeader } from "./DashboardHeader";
+import DashboardHeader from "./DashboardHeader";
 import DashboardProvider from "./DashboardProvider";
 
-// Get the hook from the provider
 const useDashboard = DashboardProvider.useDashboard;
 
 const navigationItems = [
@@ -133,7 +132,7 @@ export default function DashboardLayout({ children }) {
         </aside>
 
         <main className="flex-1 flex flex-col">
-          <DashboardHeader />
+          <DashboardHeader onNavigate={setCurrentPage} />
 
           <div className="flex-1 p-6 bg-background">{children}</div>
         </main>

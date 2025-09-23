@@ -1,6 +1,5 @@
 "use client"
 import { Button } from "@/components/ui/Button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Bell, LogOut, User, Calendar } from "lucide-react"
 
@@ -14,7 +13,7 @@ export function DashboardHeader({ title, description }) {
       </div>
 
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="sm" className="relative">
+        <Button variant="ghost" size="sm" className="relative cursor-pointer">
           <Bell className="h-4 w-4" />
           <span className="absolute -top-1 -right-1 h-3 w-3 bg-destructive rounded-full text-xs flex items-center justify-center text-destructive-foreground">
             3
@@ -23,7 +22,7 @@ export function DashboardHeader({ title, description }) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+            <Button variant="ghost" className="relative h-10 w-10 rounded-full cursor-pointer">
               <Avatar className="h-10 w-10">
                 <AvatarFallback className="bg-primary text-primary-foreground font-semibold">K</AvatarFallback>
               </Avatar>

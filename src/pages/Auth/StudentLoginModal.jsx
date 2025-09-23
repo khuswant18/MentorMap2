@@ -151,7 +151,7 @@ export default function StudentLoginModal({ isOpen, onClose }) {
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Student Login</h2>
               <p className="text-gray-600">Join our community of learners!</p>
             </div>
-            <button onClick={handleClose} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <button onClick={handleClose} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -193,7 +193,7 @@ export default function StudentLoginModal({ isOpen, onClose }) {
                 <Button 
                   onClick={sendPhoneOtp} 
                   disabled={loading} 
-                  className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+                  className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50 cursor-pointer"
                 >
                   {loading ? "Sending OTP..." : "Send OTP"}
                 </Button>
@@ -228,7 +228,7 @@ export default function StudentLoginModal({ isOpen, onClose }) {
                 <Button 
                   onClick={verifyPhoneOtp} 
                   disabled={loading} 
-                  className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+                  className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50 cursor-pointer"
                 >
                   {loading ? "Verifying OTP..." : "Verify OTP"}
                 </Button>
@@ -284,7 +284,7 @@ export default function StudentLoginModal({ isOpen, onClose }) {
                     <Button 
                       onClick={sendOtpAfterGoogle} 
                       disabled={loading} 
-                      className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+                      className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50 cursor-pointer"
                     >
                       {loading ? "Sending..." : "Send OTP"} 
                     </Button>
@@ -317,7 +317,7 @@ export default function StudentLoginModal({ isOpen, onClose }) {
                     <Button 
                       onClick={verifyOtpAfterGoogle} 
                       disabled={loading} 
-                      className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
+                      className="w-full h-12 text-base font-semibold bg-blue-600 hover:bg-blue-700 disabled:opacity-50 cursor-pointer"
                     >
                       {loading ? "Verifying..." : "Verify OTP"}
                     </Button>

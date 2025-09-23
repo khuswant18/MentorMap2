@@ -129,7 +129,7 @@ export default function BookingsPage() {
       </div>
 
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+      {/* <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
         <div className="flex flex-wrap gap-3">
           <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-sm font-medium">
             1:1 calls
@@ -144,7 +144,7 @@ export default function BookingsPage() {
             Digital Product
           </button>
         </div>
-      </div>
+      </div> */}
 
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">

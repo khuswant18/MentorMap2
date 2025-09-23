@@ -15,7 +15,7 @@ export const mentorsData = [
     targetAudience: "Experienced Professional",
     targetRole: "Frontend Developer Roles",
   },
-  { 
+  {  
     id: "2",
     name: "Ravi Kumar",
     title: "Software Developer Engineer",

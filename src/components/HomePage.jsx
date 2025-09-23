@@ -71,29 +71,6 @@ export default function HomePage() {
         })}
       </div>
 
-
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
-        <div className="mb-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">Quick Actions</h3>
-          <p className="text-gray-600">Common tasks and shortcuts to boost your productivity</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button className="flex items-center justify-center gap-3 py-4 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium shadow-sm">
-            <Calendar className="w-5 h-5" />
-            Schedule Session
-          </button>
-          <button className="flex items-center justify-center gap-3 py-4 px-6 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200 font-medium">
-            <Users className="w-5 h-5" />
-            View Mentees
-          </button>
-          <button className="flex items-center justify-center gap-3 py-4 px-6 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200 font-medium">
-            <TrendingUp className="w-5 h-5" />
-            View Analytics
-          </button>
-        </div>
-      </div>
-
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <div className="flex items-center justify-between mb-6">
