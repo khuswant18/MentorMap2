@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/Button";
 import { Link } from "react-router-dom";
 import useAuthStore from "@/stores/authStore";
 import { useNavigate } from "react-router-dom";
-import api from "./api";
+import api from "@/lib/api";
 
 export default function Home() {
   const { colleges, fetchColleges, loading } = useCollegeStore();
@@ -31,7 +31,7 @@ export default function Home() {
       .then((res) => console.log("Backend says:", res.data))
       .catch((err) => console.error(err));
   }, []);
-
+ 
   useEffect(() => {
     fetchColleges();
     // eslint-disable-next-line react-hooks/exhaustive-deps
