@@ -6,7 +6,6 @@ const ProtectedRoute = ({ children, requiredRole }) => {
   const { isAuthenticated, activeRole, isLoading } = useAuthStore();
 
   if (isLoading) {
-    console.log(isLoading,"inside protected route")
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
@@ -15,7 +14,6 @@ const ProtectedRoute = ({ children, requiredRole }) => {
   }
 
   if (!isAuthenticated) {
-    console.log(isAuthenticated,"inside protected route")
     return <Navigate to="/" replace />;
   }
 

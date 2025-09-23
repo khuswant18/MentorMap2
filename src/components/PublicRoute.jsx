@@ -7,7 +7,6 @@ const PublicRoute = ({ children }) => {
 
 
   if (isLoading) {
-    console.log(isLoading,"inside public route...isloading")
     return (
       <div className="min-h-screen flex items-center justify-center">
         
