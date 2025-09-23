@@ -20,7 +20,7 @@ import useAuthStore from "@/stores/authStore";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const { colleges, fetchColleges, loading } = useCollegeStore();
+  const { colleges, fetchColleges} = useCollegeStore();
   const navigate = useNavigate();
   const { isAuthenticated } = useAuthStore();
   const featuredMentors = mentorsData.slice(0, 3);
@@ -31,7 +31,7 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); //
 
-  if (loading) return <div>Loading...</div>;
+  // if (loading) return <div>Loading...</div>;
 
   const featuredColleges = colleges.slice(0, 6);
 
