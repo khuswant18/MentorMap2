@@ -78,16 +78,18 @@ const useAuthStore = create(
     // setLoading: (loading) => set({ isLoading: loading }),
 
     validateUser: async () => {
-      const { isLoading } = get();
-      if (isLoading) return;
+      // const { isLoading } = get();
+      // if (isLoading) return;
 
       set({ isLoading: true });
 
       try {
         const role = Cookies.get("role") || "student"; 
         const endpoint = "/student/auth/me";
- 
+        console.log("before api call")
         const res = await api.get(endpoint);
+        console.log("after api call")
+        console.log("response from validate user:", res)
 
         if (res.data.user) {
           set({ 
