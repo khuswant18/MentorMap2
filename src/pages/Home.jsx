@@ -18,34 +18,36 @@ import { Button } from "@/components/ui/Button";
 import { Link } from "react-router-dom";
 import useAuthStore from "@/stores/authStore";
 import { useNavigate } from "react-router-dom";
+import api from "./api";
 
 export default function Home() {
-  const {colleges,fetchColleges,loading} = useCollegeStore()
-  const navigate = useNavigate() 
-  const {isAuthenticated} = useAuthStore()
+  const { colleges, fetchColleges, loading } = useCollegeStore();
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuthStore();
   const featuredMentors = mentorsData.slice(0, 3);
 
   useEffect(() => {
-  fetch(import.meta.env.VITE_API_URL + "/ping")
-    .then(res => res.text())
-    .then(console.log)
-    .catch(console.error)
-}, [])
-  
-  useEffect(()=>{  
-    fetchColleges() 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]) //
+    api.get("/ping")
+      .then((res) => console.log("Backend says:", res.data))
+      .catch((err) => console.error(err));
+  }, []);
 
-  if (loading) return <div>Loading...</div>
+  useEffect(() => {
+    fetchColleges();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); //
+
+  if (loading) return <div>Loading...</div>;
 
   const featuredColleges = colleges.slice(0, 6);
 
   const handleConnectClick = () => {
     setTimeout(() => {
-      {isAuthenticated ? navigate('/mentorspage') : navigate('/')}
-    }, 500);  
-  }; 
+      {
+        isAuthenticated ? navigate("/mentorspage") : navigate("/");
+      }
+    }, 500);
+  };
 
   return (
     <div>
@@ -100,7 +102,7 @@ export default function Home() {
           </div>
 
           <div className="cursor-pointer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-             {featuredColleges.map((college) => (
+            {featuredColleges.map((college) => (
               <Card
                 key={college.id}
                 className="group hover:shadow-medium transition-all duration-300 bg-card-gradient border-0"
@@ -143,8 +145,8 @@ export default function Home() {
                         size="sm"
                         className="group/btn"
                       >
-                        <Link to={`/mentors/${college.name}`}>     
-                          View Mentors 
+                        <Link to={`/mentors/${college.name}`}>
+                          View Mentors
                           <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                         </Link>
                       </Button>
@@ -253,4 +255,3 @@ export default function Home() {
     </div>
   );
 }
- 
