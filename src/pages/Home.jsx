@@ -24,6 +24,13 @@ export default function Home() {
   const navigate = useNavigate() 
   const {isAuthenticated} = useAuthStore()
   const featuredMentors = mentorsData.slice(0, 3);
+
+  useEffect(() => {
+  fetch(import.meta.env.VITE_API_URL + "/ping")
+    .then(res => res.text())
+    .then(console.log)
+    .catch(console.error)
+}, [])
   
   useEffect(()=>{  
     fetchColleges() 
